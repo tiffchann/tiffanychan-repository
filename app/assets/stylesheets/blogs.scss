@@ -6,7 +6,7 @@ body {
  color: #7498ad;
  font-size: 16px;
  font-family: Verdana;
- text-align: center;
+ text-align: left;
  
 }
 
@@ -22,11 +22,10 @@ img {
 }
 
 div {
-    margin: auto;
+    margin: left;
     height: 500px;
     width: 500px;
     border: 1px solid grey;
-
     background-image: url("http://40.media.tumblr.com/513bfd9fff392d995c9efa251e9c83b3/tumblr_nnhf3tM8ph1skytjmo1_250.jpg");
 }
 

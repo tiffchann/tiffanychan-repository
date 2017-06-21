@@ -26,7 +26,6 @@ end
 
 def update
   @portfolio_item = Portfolio.find(params[:id])
-  
     respond_to do |format|
       if @portfolio_item.update(params.require(:portfolio).permit(:title, :subtitle, :body))
         format.html { redirect_to @portfolios_path, notice: 'The record successfully updated.' }
@@ -39,4 +38,14 @@ def update
     @portfolio_item = Portfolio.find(params[:id])
   end
     
+    def destroy
+      # Perform the lookup
+    @portfolio_item = Portfolio.find(params[:id])
+      # Destroy/delete the record
+     @portfolio_item.destroy
+     # Redirect
+    respond_to do |format|
+      format.html { redirect_to portfolios_url, notice: 'Record is removed.' }
+    end
+  end
   end

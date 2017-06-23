@@ -14,8 +14,11 @@ Rails.application.routes.draw do
   get 'contact', to: 'pages#contact'
   
 
-  resources :blogs
-  
+  resources :blogs do 
+    member do 
+      get :toggle_status
+  end
+end  
   # To go to the homepage automatically:  
   # Root of the application (homepage) below syntax
 root to: 'pages#home'

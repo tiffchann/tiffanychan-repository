@@ -1,17 +1,17 @@
 class PortfoliosController < ApplicationController
-    def index
+  def index
     @portfolio_items = Portfolio.all
-    end
-  
-    def angular
+  end
+
+  def angular
     @angular_portfolio_items = Portfolio.angular
-    end
-    
-    def new
-        @portfolio_item = Portfolio.new
-    end
-    
-    def create
+  end
+  
+  def new
+      @portfolio_item = Portfolio.new
+  end
+  
+  def create
     @portfolio_item = Portfolio.new(params.require(:portfolio).permit(:title, :subtitle, :body))
 
     respond_to do |format|
@@ -22,14 +22,13 @@ class PortfoliosController < ApplicationController
       end
     end
   end
-end
 
-def edit 
-  @portfolio_item = Portfolio.find(params[:id])
-end
+  def edit 
+    @portfolio_item = Portfolio.find(params[:id])
+  end
 
-def update
-  @portfolio_item = Portfolio.find(params[:id])
+  def update
+    @portfolio_item = Portfolio.find(params[:id])
     respond_to do |format|
       if @portfolio_item.update(params.require(:portfolio).permit(:title, :subtitle, :body))
         format.html { redirect_to @portfolios_path, notice: 'The record successfully updated.' }
@@ -37,19 +36,22 @@ def update
         format.html { render :edit }
       end
     end
-    
-    def show
+  end
+  
+  def show
     @portfolio_item = Portfolio.find(params[:id])
   end
     
-    def destroy
-      # Perform the lookup
+  def destroy
+    # Perform the lookup
     @portfolio_item = Portfolio.find(params[:id])
-      # Destroy/delete the record
-     @portfolio_item.destroy
-     # Redirect
+
+    # Destroy/delete the record
+    @portfolio_item.destroy
+
+    # Redirect
     respond_to do |format|
-      format.html { redirect_to portfolios_url, notice: 'Record is removed.' }
+      format.html { redirect_to portfolios_url, notice: 'Record was removed.' }
     end
   end
-  end
+end

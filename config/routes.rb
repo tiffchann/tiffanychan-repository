@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   # In this case, it will be a show route. 
   resources :portfolios, except: [:show]
   
+  get 'angular-items', to: 'portfolios#angular'
+  
   # portfolio/1 not portfolios/1
   # The system will redirect it to the show page but the URL will show as portfolio, not portfolios
   get 'portfolio/:id', to: 'portfolios#show', as: 'portfolio_show'

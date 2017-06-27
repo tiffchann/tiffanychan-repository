@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  devise_for :users
   # Rake routes will show all the resource routes except the ones you don't want.
   # In this case, it will be a show route. 
   resources :portfolios, except: [:show]

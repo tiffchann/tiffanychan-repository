@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  devise_for :users, path: '', path_names: {sign_in: 'login', sign_out: 'logout', sign_up: 'register'}
+  
   # Rake routes will show all the resource routes except the ones you don't want.
   # In this case, it will be a show route. 
   resources :portfolios, except: [:show]

@@ -15,13 +15,8 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     
-    <div>
-      <div><%= link_to "Home", root_path%></div>
-      <div><%= link_to "About", about_me_path%></div>
-      <div><%= link_to "Contact", contact_path%></div>
-      <div><%= link_to "Blog", blogs_path%></div>
-      <div><%= link_to "Portfolio", portfolios_path%></div>
-    </div>
+    <!-- This is going to take in the _nav.html.erb partial file just like how the application controller takes in the concerns -->
+   <%= render "shared/nav" %>
     
     <% if current_user.is_a?(User) %>
     <!--This will give a link for logout and here is the path and also the method of deletion.-->

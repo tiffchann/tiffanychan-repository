@@ -16,7 +16,7 @@
     <p class="alert"><%= alert %></p>
     
     <!-- This is going to take in the _nav.html.erb partial file just like how the application controller takes in the concerns -->
-   <%= render "shared/nav" %>
+   <%= render "shared/nav", location: 'top' %>
     
     <% if current_user.is_a?(User) %>
     <!--This will give a link for logout and here is the path and also the method of deletion.-->

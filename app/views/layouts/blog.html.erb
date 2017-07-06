@@ -15,23 +15,16 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     
-    
-    
-    <% if current_user.is_a?(User) %>
-    <!--This will give a link for logout and here is the path and also the method of deletion.-->
-    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-  <% else %>
-    <%= link_to "Register", new_user_registration_path %>
-    <%= link_to "Login", new_user_session_path %>
-  <% end %>
+    <!-- This is a view helper, which is similar to a partial file but view helpers pass in data (the embedded ruby code) -->
+    <!-- You can find this in application_helper.rb -->
+    <%= login_helper %>
     
     <!-- yield is extremely important because if you didn't have it then all of your page content would disappear -->
     <%= yield %>
     
        <%= render "shared/nav", location: 'bottom' %>
     
-    <% if session[:source] %>
-    <p>Thanks for visiting me from <%= session[:source] %></p>
-    <% end %>
+        <%= source_helper("blog") %>
+
   </body>
 </html>

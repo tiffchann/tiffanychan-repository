@@ -7,4 +7,11 @@ class ApplicationController < ActionController::Base
   include CurrentUserConcern
   include DefaultPageContent
   
+  before_action :set_copyright
+  
+  def set_copyright
+    @copyright = ChanViewTool::Renderer.copyright 'Tiffany Chan', "All right reserved"
+  end
 end
+
+

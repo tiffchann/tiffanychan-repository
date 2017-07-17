@@ -17,7 +17,7 @@
 
   <body>
     <%= render 'shared/portfolio_nav' %>
-    <%= render 'shared/portfolio_masthead' %>
+    <%= render 'shared/portfolio_masthead' unless logged_in?(:site_admin) %>
 
 <!-- yield is extremely important because if you didn't have it then all of your page content would disappear -->
     <%= yield %>

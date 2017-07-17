@@ -2,6 +2,10 @@
 <!-- This is the master layout file for the entire app. It will show on every page -->
 <html>
   <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
     <title><%= @page_title %></title>
     <%= csrf_meta_tags %>
     
@@ -12,25 +16,28 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="cover-container">
     
-    <!-- This is going to take in the _nav.html.erb partial file just like how the application controller takes in the concerns -->
-    <!-- But partials can be shared throughout the files whereas concerns go in the application controller -->
-   <%= render "shared/nav", location: 'top' %>
-    
-    <!-- This is a view helper, which is similar to a partial file but view helpers pass in data (the embedded ruby code) -->
-    <!-- You can find this in application_helper.rb -->
-    <%= login_helper %>
-    
-    <!-- yield is extremely important because if you didn't have it then all of your page content would disappear -->
-    <%= yield %>
-    
-    <p></p>
-    
-    <%= copyright_generator %>
-    
-    <%= source_helper("application") %>
-    
+          <!-- This is going to take in the _nav.html.erb partial file just like how the application controller takes in the concerns -->
+          <!-- But partials can be shared throughout the files whereas concerns go in the application controller -->
+         <%= render "shared/application_nav" %>
+          
+          <!-- This is a view helper, which is similar to a partial file but view helpers pass in data (the embedded ruby code) -->
+          <!-- <  %  = login_helper %> -->
+          <!-- You can find this in application_helper.rb -->
+          
+          <!-- yield is extremely important because if you didn't have it then all of your page content would disappear -->
+          <%= yield %>
+          
+          <p></p>
+          
+          <%= render "shared/application_footer" %>
+          
+          <%= source_helper("application") %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

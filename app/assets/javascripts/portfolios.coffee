@@ -13,6 +13,8 @@ set_positions = ->
 
 ready = ->
   set_positions()
+  
+    # .sortable is a function called from the html.sortable.js file.
   $('.sortable').sortable()
   $('.sortable').sortable().bind 'sortupdate', (e, ui) ->
     updated_order = []
@@ -28,5 +30,5 @@ ready = ->
       data: order: updated_order
     return
   return
-
+ # These two ready's are different. The first ready is provided by jquery. The second ready is a variable (above code).
 $(document).ready ready

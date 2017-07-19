@@ -20,8 +20,15 @@
       <div class="site-wrapper-inner">
         <div class="cover-container">
           
-          <div id = "background"></div>
-    
+          <%= image_tag(
+              'cherryblossoms.gif',
+              id: 'background',
+              autoplay: true,
+              loop: true,
+              muted: true,
+              poster: 'waveoffkanagawa.jpg'
+            )
+            %>
           <!-- This is going to take in the _nav.html.erb partial file just like how the application controller takes in the concerns -->
           <!-- But partials can be shared throughout the files whereas concerns go in the application controller -->
          <%= render "shared/application_nav" %>

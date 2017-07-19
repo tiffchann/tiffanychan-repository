@@ -12,6 +12,11 @@ def self.angular
    where(subtitle: 'Angular') 
    
 end
+
+def self.by_position
+   order("position ASC") 
+end
+
 # This scope covers all the posts with rails on ruby subtitles.
 # This is a simplified version of def self.angular above.
 scope :ruby_on_rails_portfolio_items, -> { where(subtitle: 'Ruby on Rails') }

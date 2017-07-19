@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   
   # Rake routes will show all the resource routes except the ones you don't want.
   # In this case, it will be a show route. 
-  resources :portfolios, except: [:show]
+  resources :portfolios, except: [:show] do
+    put :sort, on: :collection
+  end
   
   get 'angular-items', to: 'portfolios#angular'
   

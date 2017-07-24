@@ -9,5 +9,5 @@ class Blog < ApplicationRecord
   #In this case, it's going to validate if the user inputted a title and a body. 
   validates_presence_of :title, :body
   
-  
+  # belongs_to :topic
 end

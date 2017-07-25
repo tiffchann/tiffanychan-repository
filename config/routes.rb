@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+  resources :comments
   devise_for :users, path: '', path_names: {sign_in: 'login', sign_out: 'logout', sign_up: 'register'}
   
   # Rake routes will show all the resource routes except the ones you don't want.
@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 #pages is the controller. about is the action.
   get 'about-me', to: 'pages#about'
   get 'contact', to: 'pages#contact'
+  get 'news', to: 'pages#news'
   
 
   resources :blogs do 

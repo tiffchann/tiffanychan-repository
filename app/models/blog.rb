@@ -7,9 +7,9 @@ class Blog < ApplicationRecord
   
   #This is data validation, which validates the presence of data. 
   #In this case, it's going to validate if the user inputted a title and a body. 
-  validates_presence_of :title, :body
+  validates_presence_of :title, :body, :topic_id
   
-  # belongs_to :topic
+  belongs_to :topic
   
   has_many :comments, dependent: :destroy
   

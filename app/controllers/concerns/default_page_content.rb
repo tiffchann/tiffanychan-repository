@@ -6,8 +6,8 @@ extend ActiveSupport::Concern
    end
 
     def set_page_defaults
-    @page_title = "DevCampPortfolio | My Website"
-    @seo_keywords = "Tiffany Chan Portfolio"
+    @page_title = "TIFf CHAN"
+    @seo_keywords = "Tiffany Chan's Portfolio"
     end
 end
 

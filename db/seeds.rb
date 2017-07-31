@@ -6,6 +6,25 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.create!(
+  email: "tiffanychan0504@gmail.com",
+  password: "asdfasdf",
+  password_confirmation: "asdfasdf",
+  name: "Admin User",
+  roles: "site_admin"
+)
+
+puts "1 Admin user created"
+
+User.create!(
+  email: "test@test.com",
+  password: "asdfasdf",
+  password_confirmation: "asdfasdf",
+  name: "Regular User",
+)
+
+puts "1 regular user created"
+
 3.times do |topic|
     Topic.create!(
     title: "Topic #{topic}"
@@ -25,14 +44,14 @@ end
 
 puts "10 blog posts created"
 
-5.times do |skill|
+3.times do |skill|
     Skill.create!(
         title: "Rails #{skill}",
         percent_utilized: 15
         )
     end
     
-puts "5 skills created"
+puts "3 skills created"
 
 8.times do |portfolio_item|
     Portfolio.create!(

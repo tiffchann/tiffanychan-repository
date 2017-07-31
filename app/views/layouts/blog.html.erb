@@ -10,6 +10,10 @@
     <%= csrf_meta_tags %>
 
     <meta name="keywords" content="<%= @seo_keywords %>" />
+    
+    <%= favicon_link_tag 'favicons/favicon.ico' %>
+    
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway" rel="stylesheet">
 
 <!-- blogs is a style sheet in the line below -->
     <%= stylesheet_link_tag    'blogs', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -35,7 +39,6 @@
       
       <%= alerts %>
 
-      <%= source_helper("blog") %>
     </div>
   </body>
 </html>
